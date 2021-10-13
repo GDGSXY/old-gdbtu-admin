@@ -3,6 +3,8 @@ package cn.edu.gdbtu.admin.common.auth;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.jsonwebtoken.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -22,6 +24,8 @@ public class JwtUtil {
     private static final String DEFAULT_SIGNING_KEY = "ajdsfklheirosadfkljlahgauoweraysadfkhjlzxvcbnm";
 
     private static final int DEFAULT_EXPIRATION_INTERVAL = 60 * 60 * 12;
+
+    private static @Getter @Setter JwtUtil singleton;
 
     private final int expirationInterval;
 
