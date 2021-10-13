@@ -21,7 +21,7 @@ public class PagingQuery {
     @NotNull
     private Long current;
 
-    @Min(5)
+    @Min(1)
     @Max(100)
     @NotNull
     private Long pageSize;
