@@ -32,4 +32,8 @@ public class R<T> {
         return new R<>(0, "ok", data);
     }
 
+    public static <T> R<T> fail(String msg) {
+        return new R<>(500, msg, null);
+    }
+
 }
