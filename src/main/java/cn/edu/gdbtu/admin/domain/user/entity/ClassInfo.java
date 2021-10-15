@@ -31,16 +31,6 @@ public class ClassInfo extends BaseEntity {
     // 详细信息
 
     /**
-     * 学院代码
-     */
-    private String academyCode;
-
-    /**
-     * 学院名称
-     */
-    private String academyName;
-
-    /**
      * 开设年份
      */
     private String establishYear;
@@ -49,16 +39,6 @@ public class ClassInfo extends BaseEntity {
      * 学制
      */
     private String schoolYear;
-
-    /**
-     * 专业代码
-     */
-    private String majorCode;
-
-    /**
-     * 专业名称
-     */
-    private String majorName;
 
     /**
      * 培养层次
