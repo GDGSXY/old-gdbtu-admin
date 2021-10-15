@@ -1,10 +1,10 @@
 package cn.edu.gdbtu.admin.domain.user.entity;
 
 import cn.edu.gdbtu.admin.common.entity.BaseEntity;
-import cn.edu.gdbtu.admin.domain.enums.EducationLevelEnum;
-import cn.edu.gdbtu.admin.domain.enums.PoliticalOutlookEnum;
-import cn.edu.gdbtu.admin.domain.enums.StudentStatusEnum;
-import cn.edu.gdbtu.admin.domain.enums.UserSexEnum;
+import cn.edu.gdbtu.admin.domain.user.enums.EducationLevelEnum;
+import cn.edu.gdbtu.admin.domain.user.enums.PoliticalOutlookEnum;
+import cn.edu.gdbtu.admin.domain.user.enums.StudentStatusEnum;
+import cn.edu.gdbtu.admin.domain.user.enums.UserGenderEnum;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -34,7 +34,7 @@ public class Student extends BaseEntity {
     /**
      * 性别
      */
-    private UserSexEnum gender;
+    private UserGenderEnum gender;
 
     /**
      * 姓名拼音
@@ -55,26 +55,6 @@ public class Student extends BaseEntity {
      * 民族
      */
     private String nationality;
-
-    /**
-     * 学院
-     */
-    private String academyName;
-
-    /**
-     * 二级学院代码
-     */
-    private String academyCode;
-
-    /**
-     * 专业
-     */
-    private String majorCode;
-
-    /**
-     * 专业代码
-     */
-    private String majorName;
 
     /**
      * 学制

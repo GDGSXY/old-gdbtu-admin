@@ -2,10 +2,10 @@ package cn.edu.gdbtu.admin.controller;
 
 import cn.edu.gdbtu.admin.common.query.PagingQuery;
 import cn.edu.gdbtu.admin.common.web.R;
-import cn.edu.gdbtu.admin.domain.assembler.ClassInfoAssembler;
-import cn.edu.gdbtu.admin.domain.entity.ClassInfo;
-import cn.edu.gdbtu.admin.domain.vo.ClassInfoVO;
-import cn.edu.gdbtu.admin.service.ClassInfoService;
+import cn.edu.gdbtu.admin.domain.user.assembler.ClassInfoAssembler;
+import cn.edu.gdbtu.admin.domain.user.entity.ClassInfo;
+import cn.edu.gdbtu.admin.controller.vo.ClassInfoVO;
+import cn.edu.gdbtu.admin.service.user.ClassInfoService;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

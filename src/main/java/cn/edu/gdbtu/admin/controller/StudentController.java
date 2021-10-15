@@ -1,10 +1,10 @@
 package cn.edu.gdbtu.admin.controller;
 
 import cn.edu.gdbtu.admin.common.web.R;
-import cn.edu.gdbtu.admin.domain.assembler.StudentAssembler;
-import cn.edu.gdbtu.admin.domain.entity.Student;
-import cn.edu.gdbtu.admin.domain.vo.StudentVO;
-import cn.edu.gdbtu.admin.service.StudentService;
+import cn.edu.gdbtu.admin.domain.user.assembler.StudentAssembler;
+import cn.edu.gdbtu.admin.domain.user.entity.Student;
+import cn.edu.gdbtu.admin.controller.vo.StudentVO;
+import cn.edu.gdbtu.admin.service.user.StudentService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;

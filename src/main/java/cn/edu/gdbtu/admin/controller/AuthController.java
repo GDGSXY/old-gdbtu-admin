@@ -2,11 +2,11 @@ package cn.edu.gdbtu.admin.controller;
 
 import cn.edu.gdbtu.admin.common.auth.JwtUtil;
 import cn.edu.gdbtu.admin.common.web.R;
-import cn.edu.gdbtu.admin.domain.LoginUserCMD;
-import cn.edu.gdbtu.admin.domain.assembler.UserAssembler;
-import cn.edu.gdbtu.admin.domain.entity.User;
-import cn.edu.gdbtu.admin.domain.vo.LoginUserVO;
-import cn.edu.gdbtu.admin.service.UserService;
+import cn.edu.gdbtu.admin.controller.cmd.LoginUserCMD;
+import cn.edu.gdbtu.admin.domain.user.assembler.UserAssembler;
+import cn.edu.gdbtu.admin.domain.user.entity.User;
+import cn.edu.gdbtu.admin.controller.vo.LoginUserVO;
+import cn.edu.gdbtu.admin.service.user.UserService;
 import io.swagger.annotations.Api;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;

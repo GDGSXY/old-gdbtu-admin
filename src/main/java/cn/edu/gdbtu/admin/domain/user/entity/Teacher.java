@@ -1,9 +1,9 @@
 package cn.edu.gdbtu.admin.domain.user.entity;
 
 import cn.edu.gdbtu.admin.common.entity.BaseEntity;
-import cn.edu.gdbtu.admin.domain.enums.PoliticalOutlookEnum;
-import cn.edu.gdbtu.admin.domain.enums.TeacherJobStatusEnum;
-import cn.edu.gdbtu.admin.domain.enums.UserSexEnum;
+import cn.edu.gdbtu.admin.domain.user.enums.PoliticalOutlookEnum;
+import cn.edu.gdbtu.admin.domain.user.enums.TeacherJobStatusEnum;
+import cn.edu.gdbtu.admin.domain.user.enums.UserGenderEnum;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -29,7 +29,7 @@ public class Teacher extends BaseEntity {
     /**
      * 性别
      */
-    private UserSexEnum gender;
+    private UserGenderEnum gender;
 
     /**
      * 身份证号码
