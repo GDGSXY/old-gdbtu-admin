@@ -136,9 +136,12 @@
 | 字段名 | 类型 | 描述 |
 | --- | --- | --- |
 | id | BIGINT UNSIGNED | PK |
+| student_code | CHAR(50) | 学号 |
 | academy_id | BIGINT UNSIGNED | 学院 id |
 | major_id | BIGINT UNSIGNED | 专业 id |
 | class_id | BIGINT UNSIGNED | 班级 id |
+
+> uk (student_code)
 
 ## teacher (教职工表)
 

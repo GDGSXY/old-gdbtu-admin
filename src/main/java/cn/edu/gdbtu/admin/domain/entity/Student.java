@@ -35,7 +35,7 @@ public class Student extends BaseEntity {
     /**
      * 学号
      */
-    private String studentNumber;
+    private String studentCode;
 
     /**
      * 性别
