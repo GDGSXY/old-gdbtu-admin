@@ -116,8 +116,8 @@
 | 字段名 | 类型 | 描述 |
 | --- | --- | --- |
 | id | BIGINT UNSIGNED | PK |
-| name | CHAR(50) |  |
-| level | CHAR(50) | 职级 |
+| name | CHAR(50) | 角色名称 |
+| level | ENUM([职级](#常量)) | 角色职级 |
 
 > uk (name)
 
