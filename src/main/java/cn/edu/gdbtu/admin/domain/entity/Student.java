@@ -35,57 +35,57 @@ public class Student extends BaseEntity {
     /**
      * 学号
      */
-    private String xh;
+    private String studentNumber;
 
     /**
      * 性别
      */
-    private UserSexEnum sex;
+    private UserSexEnum gender;
 
     /**
      * 姓名拼音
      */
-    private String xmpy;
+    private String pinyinName;
 
     /**
      * 准考证号
      */
-    private String zkzh;
+    private String admissionTicketNumber;
 
     /**
      * 出生日期
      */
-    private String csrq;
+    private String birthDate;
 
     /**
      * 民族
      */
-    private String mz;
+    private String nationality;
 
     /**
      * 学院
      */
-    private String xymc;
+    private String academyName;
 
     /**
      * 二级学院代码
      */
-    private String xydm;
+    private String academyCode;
 
     /**
      * 专业
      */
-    private String zymc;
+    private String majorCode;
 
     /**
      * 专业代码
      */
-    private String zydm;
+    private String majorName;
 
     /**
      * 学制
      */
-    private String xz;
+    private String schoolYear;
 
     /**
      * 学籍状态
@@ -95,7 +95,7 @@ public class Student extends BaseEntity {
     /**
      * 年级
      */
-    private String nj;
+    private String grade;
 
     /**
      * 照片
@@ -105,27 +105,27 @@ public class Student extends BaseEntity {
     /**
      * 入学日期
      */
-    private String rxrq;
+    private String enrollmentDate;
 
     /**
      * 考生类别
      */
-    private String kslb;
+    private String candidateCategory;
 
     /**
      * 原毕业学校
      */
-    private String xyxx;
+    private String graduatedSchool;
 
     /**
      * 入学方式
      */
-    private String rxfs;
+    private String enrollmentWay;
 
     /**
      * 办学形式
      */
-    private String bxxs;
+    private String schoolForm;
 
     /**
      * 培养层次
@@ -135,37 +135,37 @@ public class Student extends BaseEntity {
     /**
      * 生源所在地
      */
-    private String syszd;
+    private String originPlace;
 
     /**
      * 籍贯
      */
-    private String jg;
+    private String nativePlace;
 
     /**
      * 出生地
      */
-    private String csd;
+    private String birthPlace;
 
     /**
      * 家庭地址
      */
-    private String jtdz;
+    private String address;
 
     /**
      * 邮政编码
      */
-    private String yzbm;
+    private String postCode;
 
     /**
      * 宅电
      */
-    private String lxdh;
+    private String homePhone;
 
     /**
      * 个人电话
      */
-    private String grdh;
+    private String phoneNumber;
 
     /**
      * 政治面貌
@@ -175,47 +175,47 @@ public class Student extends BaseEntity {
     /**
      * 健康状况
      */
-    private String jkzk;
+    private String healthy;
 
     /**
      * 特长
      */
-    private String tc;
+    private String hobby;
 
     /**
      * 身份证号
      */
-    private String sfzh;
+    private String identificationNumber;
 
     /**
      * 宿舍号
      */
-    private String ssh;
+    private String dormitoryNumber;
 
     /**
      * 学习年限
      */
-    private String xxnx;
+    private String learningTime;
 
     /**
      * 入学总分
      */
-    private String rxzf;
+    private String enrollmentScore;
 
     /**
      * 备注
      */
-    private String bz;
+    private String remark;
 
     /**
      * 学生类别
      */
-    private String xslb;
+    private String studentType;
 
     /**
      * 校区
      */
-    private String xiaoq;
+    private String campus;
 
     /**
      * e_mail
@@ -230,7 +230,7 @@ public class Student extends BaseEntity {
     /**
      * 考生号
      */
-    private String ksh;
+    private String candidateNumber;
 
     /**
      * QQ号码
@@ -240,101 +240,101 @@ public class Student extends BaseEntity {
     /**
      * 入学年份
      */
-    private String rxnf;
+    private String enrollmentYear;
 
     /**
      * 学科大类
      */
-    private String xkdl;
+    private String subjectType;
 
     /**
      * 学科
      */
-    private String xk;
+    private String subject;
 
     /**
      * 国际专业代码
      */
-    private String gjzydm;
+    private String nationMajorCode;
 
     /**
      * 专业培养层次
      */
-    private String zypycc;
+    private String majorTrainingLevel;
 
     /**
      * 其他办学形式
      */
-    private String qtbxxx;
+    private String otherSchoolForm;
 
     /**
      * 生源身份
      */
-    private String sysf;
+    private String originIdentity;
 
     /**
      * 毕业类别
      */
-    private String bylb;
+    private String graduateType;
 
     /**
      * 联系人
      */
-    private String lxr;
+    private String concatName;
 
     /**
      * 入党团日期
      */
-    private String rdrq;
+    private String joinDate;
 
     /**
      * 招生季节
      */
-    private String zsjj;
+    private String admissionSeason;
 
     /**
      * 入学文化程度
      */
-    private String rxwhcd;
+    private String enrollmentEducationLevel;
 
     /**
      * 主修外语语种
      */
-    private String zxwyyz;
+    private String foreignLanguage;
 
     /**
      * 学习形式
      */
-    private String xxxs;
+    private String learningWay;
 
     /**
      * 办学类型
      */
-    private String bxlx;
+    private String schoolFormType;
 
     /**
      * 培养对象
      */
-    private String pydx;
+    private String nourishObject;
 
     /**
      * 录取专业
      */
-    private String lqzy;
+    private String admissionMajor;
 
     /**
      * 学校代码
      */
-    private String xxdm;
+    private String schoolCode;
 
     /**
      * 是否报到
      */
-    private String sfbd;
+    private String checkIn;
 
     /**
      * 联系电话
      */
-    private String lxdh2;
+    private String concatPhone;
 
 }

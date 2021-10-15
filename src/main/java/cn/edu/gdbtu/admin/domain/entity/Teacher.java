@@ -27,12 +27,12 @@ public class Teacher extends BaseEntity {
     /**
      * 工号
      */
-    private String xhid;
+    private String teacherCode;
 
     /**
      * 学院代码
      */
-    private String xydm;
+    private String academyCode;
 
     /**
      * 性别
@@ -42,17 +42,17 @@ public class Teacher extends BaseEntity {
     /**
      * 身份证号码
      */
-    private String sfzh;
+    private String identificationNumber;
 
     /**
      * 籍贯
      */
-    private String jg;
+    private String nativePlace;
 
     /**
      * 联系电话
      */
-    private String lxdh;
+    private String concatNumber;
 
     /**
      * 政治面貌
@@ -62,22 +62,22 @@ public class Teacher extends BaseEntity {
     /**
      * 本科毕业学校
      */
-    private String bkbyxx;
+    private String undergraduateSchool;
 
     /**
      * 本科毕业专业
      */
-    private String bkbyzy;
+    private String undergraduateMajor;
 
     /**
      * 硕士毕业学校
      */
-    private String ssbyxx;
+    private String masterGraduateSchool;
 
     /**
      * 硕士毕业专业
      */
-    private String ssbyzy;
+    private String masterGraduateMajor;
 
     /**
      * 入职状态
