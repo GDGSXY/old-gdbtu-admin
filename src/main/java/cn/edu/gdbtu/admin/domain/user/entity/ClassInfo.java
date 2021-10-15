@@ -1,6 +1,9 @@
 package cn.edu.gdbtu.admin.domain.user.entity;
 
 import cn.edu.gdbtu.admin.common.entity.BaseEntity;
+import cn.edu.gdbtu.admin.domain.enums.ClassGraduationStatusEnum;
+import cn.edu.gdbtu.admin.domain.enums.ClassScheduleStatusEnum;
+import cn.edu.gdbtu.admin.domain.enums.EducationLevelEnum;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -23,5 +26,68 @@ public class ClassInfo extends BaseEntity {
     private Long counselorId;
 
     private Long headTeacherId;
+
+
+    // 详细信息
+
+    /**
+     * 学院代码
+     */
+    private String academyCode;
+
+    /**
+     * 学院名称
+     */
+    private String academyName;
+
+    /**
+     * 开设年份
+     */
+    private String establishYear;
+
+    /**
+     * 学制
+     */
+    private String schoolYear;
+
+    /**
+     * 专业代码
+     */
+    private String majorCode;
+
+    /**
+     * 专业名称
+     */
+    private String majorName;
+
+    /**
+     * 培养层次
+     */
+    private EducationLevelEnum educationLevel;
+
+    /**
+     * 校区代码
+     */
+    private String campusCode;
+
+    /**
+     * 校区名称
+     */
+    private String campusName;
+
+    /**
+     * 带班状态
+     */
+    private ClassScheduleStatusEnum scheduleStatus;
+
+    /**
+     * 毕业状态
+     */
+    private ClassGraduationStatusEnum status;
+
+    /**
+     * 班级人数
+     */
+    private Integer count;
 
 }
