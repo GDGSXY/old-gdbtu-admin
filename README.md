@@ -136,11 +136,13 @@
 | 字段名 | 类型 | 描述 |
 | --- | --- | --- |
 | id | BIGINT UNSIGNED | PK |
+| user_id | CHAR(50) | 用户 id |
 | student_code | CHAR(50) | 学号 |
 | academy_id | BIGINT UNSIGNED | 学院 id |
 | major_id | BIGINT UNSIGNED | 专业 id |
 | class_id | BIGINT UNSIGNED | 班级 id |
 
+> uk (user_id)
 > uk (student_code)
 
 ## teacher (教职工表)
@@ -148,9 +150,11 @@
 | 字段名 | 类型 | 描述 |
 | --- | --- | --- |
 | id | BIGINT UNSIGNED | PK |
+| user_id | CHAR(50) | 用户 id |
 | teacher_code | CHAR(50) | 教师工号 |
 | academy_id | BIGINT UNSIGNED | 学院 id |
 
+> uk (user_id)
 > uk (teacher_code)
 
 ## academy (学院表)
