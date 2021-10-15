@@ -37,7 +37,7 @@ public class Teacher extends BaseEntity {
     /**
      * 性别
      */
-    private UserSexEnum sex;
+    private UserSexEnum gender;
 
     /**
      * 身份证号码
