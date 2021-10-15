@@ -76,9 +76,4 @@ public class Teacher extends BaseEntity {
      */
     private TeacherJobStatusEnum jobStatus;
 
-    /**
-     * 删除时间
-     */
-    private String deleteTime;
-
 }
