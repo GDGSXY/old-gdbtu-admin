@@ -29,15 +29,17 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(@Nonnull HttpServletRequest req, @Nonnull HttpServletResponse res, @Nonnull Object handler) throws Exception {
-        HandlerMethod method = (HandlerMethod) handler;
-        RequiredPermission annotation = AnnotatedElementUtils.getMergedAnnotation(method.getBeanType(), RequiredPermission.class);
-        if (annotation == null && (annotation = method.getMethodAnnotation(RequiredPermission.class)) == null) {
-            return true;
+        if (handler instanceof HandlerMethod method) {
+            RequiredPermission annotation = AnnotatedElementUtils.getMergedAnnotation(method.getBeanType(), RequiredPermission.class);
+            if (annotation == null && (annotation = method.getMethodAnnotation(RequiredPermission.class)) == null) {
+                return true;
+            }
+            if (userContainsPermissions(annotation.value())) {
+                return true;
+            }
+            return fail(res);
         }
-        if (userContainsPermissions(annotation.value())) {
-            return true;
-        }
-        return fail(res);
+        return true;
     }
 
     private boolean userContainsPermissions(PermissionEnum[] requiredPermissions) {
