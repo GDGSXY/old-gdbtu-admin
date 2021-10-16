@@ -1,4 +1,4 @@
-package cn.edu.gdbtu.admin.domain.user;
+package cn.edu.gdbtu.admin.domain.user.enums;
 
 import lombok.Getter;
 

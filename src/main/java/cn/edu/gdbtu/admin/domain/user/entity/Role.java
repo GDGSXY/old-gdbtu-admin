@@ -1,7 +1,7 @@
 package cn.edu.gdbtu.admin.domain.user.entity;
 
 import cn.edu.gdbtu.admin.common.entity.BaseEntity;
-import cn.edu.gdbtu.admin.domain.user.RoleLevelEnum;
+import cn.edu.gdbtu.admin.domain.user.enums.RoleLevelEnum;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
