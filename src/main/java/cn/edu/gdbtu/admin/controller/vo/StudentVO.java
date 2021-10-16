@@ -19,6 +19,9 @@ public class StudentVO {
     @ApiModelProperty("id")
     private Long id;
 
+    @ApiModelProperty("学生姓名")
+    private String name;
+
     @ApiModelProperty("用户 id")
     private Long userId;
 

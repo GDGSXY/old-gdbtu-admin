@@ -1,20 +1,20 @@
 package cn.edu.gdbtu.admin.controller;
 
+import cn.edu.gdbtu.admin.common.query.SearchPagingQuery;
 import cn.edu.gdbtu.admin.common.web.R;
+import cn.edu.gdbtu.admin.controller.vo.StudentVO;
 import cn.edu.gdbtu.admin.domain.user.assembler.StudentAssembler;
 import cn.edu.gdbtu.admin.domain.user.entity.Student;
-import cn.edu.gdbtu.admin.controller.vo.StudentVO;
 import cn.edu.gdbtu.admin.service.user.StudentService;
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.validation.constraints.NotNull;
-import java.util.List;
+import javax.validation.Valid;
 
 /**
  * @author Jover Zhang
@@ -30,11 +30,12 @@ public class StudentController {
 
     private final StudentAssembler assembler;
 
-    @GetMapping("/{classId}")
-    @ApiOperation("通过 班级 id 查询 班级内所有学生")
-    public R<List<StudentVO>> getByClassId(@PathVariable("classId") @NotNull String classId) {
-        List<Student> list = service.getByClassId(classId);
-        return R.success(assembler.toVO(list));
+    @GetMapping
+    @ApiOperation("通过条件搜索学生信息")
+    public R<IPage<StudentVO>> searchByCondition(@Valid SearchPagingQuery query,
+                                                 Long academyId, Long majorId, Long classId) {
+        IPage<Student> page = service.searchByConditions(query, academyId, majorId, classId);
+        return R.success(page.convert(assembler::toVO));
     }
 
 }

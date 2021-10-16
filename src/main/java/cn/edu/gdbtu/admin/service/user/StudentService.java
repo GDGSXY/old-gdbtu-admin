@@ -1,9 +1,9 @@
 package cn.edu.gdbtu.admin.service.user;
 
+import cn.edu.gdbtu.admin.common.query.SearchPagingQuery;
 import cn.edu.gdbtu.admin.domain.user.entity.Student;
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.IService;
-
-import java.util.List;
 
 /**
  * @author Jover Zhang
@@ -11,6 +11,6 @@ import java.util.List;
  */
 public interface StudentService extends IService<Student> {
 
-    List<Student> getByClassId(String classId);
+    IPage<Student> searchByConditions(SearchPagingQuery query, Long academyId, Long majorId, Long classId);
 
 }
