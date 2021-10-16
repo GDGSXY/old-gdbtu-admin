@@ -16,6 +16,6 @@ public class Permission extends BaseEntity {
 
     private Long roleId;
 
-    private String accessResource;
+    private String accessibleResource;
 
 }
