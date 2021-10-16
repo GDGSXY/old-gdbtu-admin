@@ -2,11 +2,13 @@ package cn.edu.gdbtu.admin.controller;
 
 import cn.edu.gdbtu.admin.common.auth.AuthUtil;
 import cn.edu.gdbtu.admin.common.auth.LoginUser;
+import cn.edu.gdbtu.admin.common.auth.RequiredPermission;
 import cn.edu.gdbtu.admin.common.query.SearchPagingQuery;
 import cn.edu.gdbtu.admin.common.web.R;
 import cn.edu.gdbtu.admin.controller.vo.MajorVO;
 import cn.edu.gdbtu.admin.domain.user.assembler.MajorAssembler;
 import cn.edu.gdbtu.admin.domain.user.entity.Major;
+import cn.edu.gdbtu.admin.domain.user.enums.PermissionEnum;
 import cn.edu.gdbtu.admin.service.user.MajorService;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import io.swagger.annotations.Api;
@@ -28,6 +30,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @Api("专业信息 Controller")
 @RequestMapping("/v1/major")
+@RequiredPermission(PermissionEnum.MAJOR_MANAGEMENT)
 public class MajorController {
 
     private final MajorService service;

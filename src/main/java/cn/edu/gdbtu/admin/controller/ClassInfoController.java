@@ -2,11 +2,13 @@ package cn.edu.gdbtu.admin.controller;
 
 import cn.edu.gdbtu.admin.common.auth.AuthUtil;
 import cn.edu.gdbtu.admin.common.auth.LoginUser;
+import cn.edu.gdbtu.admin.common.auth.RequiredPermission;
 import cn.edu.gdbtu.admin.common.query.SearchPagingQuery;
 import cn.edu.gdbtu.admin.common.web.R;
 import cn.edu.gdbtu.admin.controller.vo.ClassInfoVO;
 import cn.edu.gdbtu.admin.domain.user.assembler.ClassInfoAssembler;
 import cn.edu.gdbtu.admin.domain.user.entity.ClassInfo;
+import cn.edu.gdbtu.admin.domain.user.enums.PermissionEnum;
 import cn.edu.gdbtu.admin.service.user.ClassInfoService;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import io.swagger.annotations.Api;
@@ -30,6 +32,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @Api("班级信息 Controller")
 @RequestMapping("/v1/class_info")
+@RequiredPermission(PermissionEnum.CLASS_MANAGEMENT)
 public class ClassInfoController {
 
     private final ClassInfoService service;

@@ -1,10 +1,12 @@
 package cn.edu.gdbtu.admin.controller;
 
+import cn.edu.gdbtu.admin.common.auth.RequiredPermission;
 import cn.edu.gdbtu.admin.common.query.SearchPagingQuery;
 import cn.edu.gdbtu.admin.common.web.R;
 import cn.edu.gdbtu.admin.controller.vo.RoleVO;
 import cn.edu.gdbtu.admin.domain.user.assembler.RoleAssembler;
 import cn.edu.gdbtu.admin.domain.user.entity.Role;
+import cn.edu.gdbtu.admin.domain.user.enums.PermissionEnum;
 import cn.edu.gdbtu.admin.service.user.RoleService;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import io.swagger.annotations.Api;
@@ -24,6 +26,7 @@ import javax.validation.Valid;
 @RequiredArgsConstructor
 @Api("角色信息 Controller")
 @RequestMapping("/v1/role")
+@RequiredPermission(PermissionEnum.ROLE_MANAGEMENT)
 public class RoleController {
 
     private final RoleService service;

@@ -1,10 +1,12 @@
 package cn.edu.gdbtu.admin.controller;
 
+import cn.edu.gdbtu.admin.common.auth.RequiredPermission;
 import cn.edu.gdbtu.admin.common.query.SearchPagingQuery;
 import cn.edu.gdbtu.admin.common.web.R;
 import cn.edu.gdbtu.admin.controller.vo.TeacherVO;
 import cn.edu.gdbtu.admin.domain.user.assembler.TeacherAssembler;
 import cn.edu.gdbtu.admin.domain.user.entity.Teacher;
+import cn.edu.gdbtu.admin.domain.user.enums.PermissionEnum;
 import cn.edu.gdbtu.admin.service.user.TeacherService;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import io.swagger.annotations.Api;
@@ -24,6 +26,7 @@ import javax.validation.Valid;
 @RequiredArgsConstructor
 @Api("教职工信息 Controller")
 @RequestMapping("/v1/teacher")
+@RequiredPermission(PermissionEnum.TEACHER_MANAGEMENT)
 public class TeacherController {
 
     private final TeacherService service;
