@@ -109,7 +109,7 @@
 | role_id | BIGINT UNSIGNED | 角色 id |
 | access_resource | VARCHAR(255) | 访问的资源 |
 
-> idx (role_id, access_resource)
+> uk (role_id, access_resource)
 
 ## role (角色表)
 
@@ -130,6 +130,8 @@
 | password | CHAR(64) | 用户密码 |
 | salt | CHAR(16) | 盐 |
 | role_id | BIGINT UNSIGNED | 角色 id |
+
+> uk (username)
 
 ## student (学生表)
 
