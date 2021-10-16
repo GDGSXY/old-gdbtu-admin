@@ -8,7 +8,6 @@ import cn.edu.gdbtu.admin.service.user.AuthService;
 import cn.edu.gdbtu.admin.service.user.PermissionService;
 import cn.edu.gdbtu.admin.service.user.RoleService;
 import cn.edu.gdbtu.admin.service.user.UserService;
-import com.google.common.base.Preconditions;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -30,15 +29,19 @@ public class AuthServiceImpl implements AuthService {
 
     @Override
     public LoginUser login(String username, String password) {
+        // 密码校验
         User user = userService.getByUsername(username);
         if (user == null || !password.equals(user.getPassword())) {
             throw new IllegalArgumentException("用户或密码不正确");
         }
-
+        // 获取角色
         Role role = roleService.getById(user.getRoleId());
-        Preconditions.checkNotNull(role);
-
+        // 获取权限
         List<PermissionEnum> permissions = permissionService.getPermissionsByRoleId(role.getId());
+        // 登录权限校验
+        if (!permissions.contains(PermissionEnum.ADMIN_SYSTEM)) {
+            throw new IllegalArgumentException("没有 Admin 系统的登录权限");
+        }
         return new LoginUser()
                 .setId(user.getId())
                 .setUsername(user.getUsername())
