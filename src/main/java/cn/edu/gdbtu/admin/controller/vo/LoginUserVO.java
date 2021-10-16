@@ -1,8 +1,11 @@
 package cn.edu.gdbtu.admin.controller.vo;
 
+import cn.edu.gdbtu.admin.domain.user.enums.PermissionEnum;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+
+import java.util.List;
 
 /**
  * @author Jover Zhang
@@ -18,8 +21,11 @@ public class LoginUserVO {
     @ApiModelProperty("用户名")
     private String username;
 
-    @ApiModelProperty("角色 id")
+    @ApiModelProperty("角色")
     private RoleVO role;
+
+    @ApiModelProperty("权限列表")
+    private List<PermissionEnum> permissions;
 
     @ApiModelProperty("token")
     private String token;

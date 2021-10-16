@@ -1,6 +1,7 @@
 package cn.edu.gdbtu.admin.domain.user.entity;
 
 import cn.edu.gdbtu.admin.common.entity.BaseEntity;
+import cn.edu.gdbtu.admin.domain.user.enums.PermissionEnum;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -16,6 +17,6 @@ public class Permission extends BaseEntity {
 
     private Long roleId;
 
-    private String accessibleResource;
+    private PermissionEnum resource;
 
 }
