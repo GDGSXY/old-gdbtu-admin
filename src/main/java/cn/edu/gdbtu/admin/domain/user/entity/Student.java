@@ -20,10 +20,6 @@ public class Student extends BaseEntity {
 
     private Long userId;
 
-    private Long academyId;
-
-    private Long majorId;
-
     private Long classId;
 
     private String studentCode;

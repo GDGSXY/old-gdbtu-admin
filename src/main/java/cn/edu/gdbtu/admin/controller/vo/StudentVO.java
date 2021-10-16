@@ -25,12 +25,6 @@ public class StudentVO {
     @ApiModelProperty("用户 id")
     private Long userId;
 
-    @ApiModelProperty("学院 id")
-    private Long academyId;
-
-    @ApiModelProperty("专业 id")
-    private Long majorId;
-
     @ApiModelProperty("班级 id")
     private Long classId;
 

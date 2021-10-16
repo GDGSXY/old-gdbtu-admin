@@ -19,10 +19,8 @@ import org.springframework.stereotype.Service;
 public class StudentServiceImpl extends ServiceImpl<StudentDao, Student> implements StudentService {
 
     @Override
-    public IPage<Student> searchByConditions(SearchPagingQuery query, Long academyId, Long majorId, Long classId) {
+    public IPage<Student> searchByConditions(SearchPagingQuery query, Long classId) {
         LambdaQueryWrapper<Student> wrapper = new LambdaQueryWrapper<Student>()
-                .eq(academyId != null, Student::getAcademyId, academyId)
-                .eq(majorId != null, Student::getMajorId, majorId)
                 .eq(classId != null, Student::getClassId, classId)
                 .likeRight(query.getSearch() != null, Student::getName, query.getSearch());
         return getBaseMapper().selectPage(query.toPage(), wrapper);

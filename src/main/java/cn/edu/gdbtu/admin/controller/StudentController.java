@@ -32,9 +32,8 @@ public class StudentController {
 
     @GetMapping
     @ApiOperation("通过条件搜索学生信息")
-    public R<IPage<StudentVO>> searchByCondition(@Valid SearchPagingQuery query,
-                                                 Long academyId, Long majorId, Long classId) {
-        IPage<Student> page = service.searchByConditions(query, academyId, majorId, classId);
+    public R<IPage<StudentVO>> searchByCondition(@Valid SearchPagingQuery query, Long classId) {
+        IPage<Student> page = service.searchByConditions(query, classId);
         return R.success(page.convert(assembler::toVO));
     }
 

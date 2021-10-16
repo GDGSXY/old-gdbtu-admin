@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface StudentService extends IService<Student> {
 
-    IPage<Student> searchByConditions(SearchPagingQuery query, Long academyId, Long majorId, Long classId);
+    IPage<Student> searchByConditions(SearchPagingQuery query, Long classId);
 
 }
