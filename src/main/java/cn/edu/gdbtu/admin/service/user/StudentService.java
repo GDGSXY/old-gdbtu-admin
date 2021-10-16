@@ -27,4 +27,11 @@ public interface StudentService extends IService<Student> {
      */
     void create(Student student);
 
+    /**
+     * 更新 Student
+     *
+     * @param student 学生信息
+     */
+    void updateStudent(Student student);
+
 }

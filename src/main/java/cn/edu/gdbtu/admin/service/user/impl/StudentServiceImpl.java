@@ -46,4 +46,16 @@ public class StudentServiceImpl extends ServiceImpl<StudentDao, Student> impleme
         getBaseMapper().insert(student);
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void updateStudent(Student student) {
+        // 校验班级
+        ClassInfo classInfo = classInfoService.getById(student.getClassId());
+        Assert.notNull(classInfo, "班级不存在");
+
+        Assert.isTrue(updateById(student), "更新失败");
+    }
+
 }

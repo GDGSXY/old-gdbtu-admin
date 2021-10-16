@@ -1,6 +1,7 @@
 package cn.edu.gdbtu.admin.service.application;
 
 import cn.edu.gdbtu.admin.controller.cmd.CreateStudentCMD;
+import cn.edu.gdbtu.admin.controller.cmd.UpdateStudentCMD;
 
 /**
  * @author Jover Zhang
@@ -9,5 +10,9 @@ import cn.edu.gdbtu.admin.controller.cmd.CreateStudentCMD;
 public interface StudentAppService {
 
     void createStudent(CreateStudentCMD cmd);
+
+    void updateStudent(UpdateStudentCMD cmd);
+
+    void deleteStudent(long studentId);
 
 }

@@ -4,6 +4,7 @@ import cn.edu.gdbtu.admin.common.auth.RequiredPermission;
 import cn.edu.gdbtu.admin.common.query.SearchPagingQuery;
 import cn.edu.gdbtu.admin.common.web.R;
 import cn.edu.gdbtu.admin.controller.cmd.CreateStudentCMD;
+import cn.edu.gdbtu.admin.controller.cmd.UpdateStudentCMD;
 import cn.edu.gdbtu.admin.controller.vo.StudentVO;
 import cn.edu.gdbtu.admin.domain.user.assembler.StudentAssembler;
 import cn.edu.gdbtu.admin.domain.user.entity.Student;
@@ -46,6 +47,20 @@ public class StudentController {
     @ApiOperation("创建学生")
     public R<Void> create(@Valid @RequestBody CreateStudentCMD cmd) {
         studentAppService.createStudent(cmd);
+        return R.success();
+    }
+
+    @PutMapping
+    @ApiOperation("修改学生信息")
+    public R<Void> update(@Valid @RequestBody UpdateStudentCMD cmd) {
+        studentAppService.updateStudent(cmd);
+        return R.success();
+    }
+
+    @DeleteMapping("/{studentId}")
+    @ApiOperation("删除学生信息")
+    public R<Void> delete(@PathVariable("studentId") long studentId) {
+        studentAppService.deleteStudent(studentId);
         return R.success();
     }
 
