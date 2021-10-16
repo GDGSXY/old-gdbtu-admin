@@ -14,8 +14,8 @@ import java.util.List;
  */
 public interface MajorService extends IService<Major> {
 
-    IPage<Major> searchByCondition(SearchPagingQuery query, long academyId);
+    IPage<Major> searchByCondition(SearchPagingQuery query, Long academyId);
 
-    List<Major> getByLoginUserPermission(LoginUser user);
+    List<Major> getByLoginUserPermission(LoginUser user, long academyId);
 
 }

@@ -20,15 +20,18 @@ import java.util.List;
 public class MajorServiceImpl extends ServiceImpl<MajorDao, Major> implements MajorService {
 
     @Override
-    public IPage<Major> searchByCondition(SearchPagingQuery query, long academyId) {
+    public IPage<Major> searchByCondition(SearchPagingQuery query, Long academyId) {
         LambdaQueryWrapper<Major> wrapper = new LambdaQueryWrapper<Major>()
+                .eq(academyId != null, Major::getAcademyId, academyId)
                 .likeRight(query.getSearch() != null, Major::getName, query.getSearch());
         return page(query.toPage(), wrapper);
     }
 
     @Override
-    public List<Major> getByLoginUserPermission(LoginUser user) {
-        return list();
+    public List<Major> getByLoginUserPermission(LoginUser user, long academyId) {
+        LambdaQueryWrapper<Major> wrapper = new LambdaQueryWrapper<Major>()
+                .eq(Major::getAcademyId, academyId);
+        return list(wrapper);
     }
 
 }

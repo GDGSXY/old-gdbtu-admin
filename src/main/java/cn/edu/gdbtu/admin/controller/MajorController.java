@@ -37,16 +37,16 @@ public class MajorController {
     @GetMapping
     @ApiOperation("通过条件搜索专业信息")
     public R<IPage<MajorVO>> searchByCondition(@Valid SearchPagingQuery query,
-                                               @ApiParam(value = "学院 id", required = true) long academyId) {
+                                               @ApiParam("学院 id") Long academyId) {
         IPage<Major> page = service.searchByCondition(query, academyId);
         return R.success(page.convert(assembler::toVO));
     }
 
     @GetMapping("/by-login_user_permission")
     @ApiOperation("通过登录用户权限获取专业信息")
-    public R<List<MajorVO>> getByLoginUserPermission() {
+    public R<List<MajorVO>> getByLoginUserPermission(@ApiParam(value = "学院 id", required = true) long academyId) {
         LoginUser user = AuthUtil.getUser();
-        List<Major> list = service.getByLoginUserPermission(user);
+        List<Major> list = service.getByLoginUserPermission(user, academyId);
         return R.success(assembler.toListVO(list));
     }
 
