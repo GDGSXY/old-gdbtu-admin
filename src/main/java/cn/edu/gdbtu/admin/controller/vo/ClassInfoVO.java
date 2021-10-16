@@ -15,6 +15,9 @@ import lombok.Data;
 @ApiModel("班级信息")
 public class ClassInfoVO {
 
+    @ApiModelProperty("id")
+    private Long id;
+
     @ApiModelProperty("班级名称")
     private String name;
 
