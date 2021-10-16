@@ -39,16 +39,16 @@ public class ClassInfoController {
     @GetMapping
     @ApiOperation("通过条件获取班级信息")
     public R<IPage<ClassInfoVO>> getListByCondition(@Valid SearchPagingQuery query,
-                                                    @ApiParam(value = "专业 id", required = true) long majorId) {
+                                                    @ApiParam("专业 id") Long majorId) {
         IPage<ClassInfo> page = service.searchByCondition(query, majorId);
         return R.success(page.convert(assembler::toVO));
     }
 
     @GetMapping("/by-login_user_permission")
     @ApiOperation("通过登录用户权限获取专业信息")
-    public R<List<ClassInfoVO>> getByLoginUserPermission() {
+    public R<List<ClassInfoVO>> getByLoginUserPermission(@ApiParam(value = "专业 id", required = true) Long majorId) {
         LoginUser user = AuthUtil.getUser();
-        List<ClassInfo> list = service.getByLoginUserPermission(user);
+        List<ClassInfo> list = service.getByLoginUserPermission(user, majorId);
         return R.success(assembler.toListVO(list));
     }
 

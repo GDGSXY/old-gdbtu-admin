@@ -20,15 +20,18 @@ import java.util.List;
 public class ClassInfoServiceImpl extends ServiceImpl<ClassInfoDao, ClassInfo> implements ClassInfoService {
 
     @Override
-    public IPage<ClassInfo> searchByCondition(SearchPagingQuery query, long majorId) {
+    public IPage<ClassInfo> searchByCondition(SearchPagingQuery query, Long majorId) {
         LambdaQueryWrapper<ClassInfo> wrapper = new LambdaQueryWrapper<ClassInfo>()
+                .eq(majorId != null, ClassInfo::getMajorId, majorId)
                 .likeRight(query.getSearch() != null, ClassInfo::getName, query.getSearch());
         return page(query.toPage(), wrapper);
     }
 
     @Override
-    public List<ClassInfo> getByLoginUserPermission(LoginUser user) {
-        return list();
+    public List<ClassInfo> getByLoginUserPermission(LoginUser user, Long majorId) {
+        LambdaQueryWrapper<ClassInfo> wrapper = new LambdaQueryWrapper<ClassInfo>()
+                .eq(ClassInfo::getMajorId, majorId);
+        return list(wrapper);
     }
 
 }

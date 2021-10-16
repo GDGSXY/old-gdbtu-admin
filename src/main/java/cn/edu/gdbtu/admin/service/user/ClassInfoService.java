@@ -14,8 +14,8 @@ import java.util.List;
  */
 public interface ClassInfoService extends IService<ClassInfo> {
 
-    IPage<ClassInfo> searchByCondition(SearchPagingQuery query, long majorId);
+    IPage<ClassInfo> searchByCondition(SearchPagingQuery query, Long majorId);
 
-    List<ClassInfo> getByLoginUserPermission(LoginUser user);
+    List<ClassInfo> getByLoginUserPermission(LoginUser user, Long majorId);
 
 }
