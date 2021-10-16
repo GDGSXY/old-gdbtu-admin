@@ -18,9 +18,6 @@ public class ClassInfoVO {
     @ApiModelProperty("班级名称")
     private String name;
 
-    @ApiModelProperty("学院 id")
-    private Long academyId;
-
     @ApiModelProperty("专业 id")
     private Long majorId;
 
