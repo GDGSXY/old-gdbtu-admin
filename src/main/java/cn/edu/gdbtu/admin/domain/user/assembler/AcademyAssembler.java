@@ -14,6 +14,8 @@ import java.util.List;
 @Mapper(unmappedTargetPolicy = ReportingPolicy.ERROR, componentModel = "spring")
 public interface AcademyAssembler {
 
+    AcademyVO toVO(Academy entity);
+
     List<AcademyVO> toListVO(List<Academy> entities);
 
 }
