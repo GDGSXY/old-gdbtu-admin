@@ -1,6 +1,8 @@
 package cn.edu.gdbtu.admin.common.auth;
 
+import cn.edu.gdbtu.admin.domain.user.entity.Role;
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 /**
  * 当前登录的用户
@@ -9,12 +11,13 @@ import lombok.Data;
  * @date 2021/10/13
  */
 @Data
+@Accessors(chain = true)
 public class LoginUser {
 
     private Long id;
 
     private String username;
 
-    private Long roleId;
+    private Role role;
 
 }

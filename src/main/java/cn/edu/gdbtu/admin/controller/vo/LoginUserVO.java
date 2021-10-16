@@ -19,7 +19,7 @@ public class LoginUserVO {
     private String username;
 
     @ApiModelProperty("角色 id")
-    private Long roleId;
+    private RoleVO role;
 
     @ApiModelProperty("token")
     private String token;
