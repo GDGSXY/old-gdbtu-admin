@@ -1,12 +1,10 @@
 package cn.edu.gdbtu.admin.controller;
 
-import cn.edu.gdbtu.admin.common.query.PagingQuery;
 import cn.edu.gdbtu.admin.common.web.R;
+import cn.edu.gdbtu.admin.controller.vo.ClassInfoVO;
 import cn.edu.gdbtu.admin.domain.user.assembler.ClassInfoAssembler;
 import cn.edu.gdbtu.admin.domain.user.entity.ClassInfo;
-import cn.edu.gdbtu.admin.controller.vo.ClassInfoVO;
 import cn.edu.gdbtu.admin.service.user.ClassInfoService;
-import com.baomidou.mybatisplus.core.metadata.IPage;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
@@ -14,7 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.validation.Valid;
+import java.util.List;
 
 /**
  * 班级信息 Controller
@@ -33,10 +31,10 @@ public class ClassInfoController {
     private final ClassInfoAssembler assembler;
 
     @GetMapping
-    @ApiOperation("分页查询")
-    public R<IPage<ClassInfoVO>> getPage(@Valid PagingQuery pagingQuery) {
-        IPage<ClassInfo> page = service.page(pagingQuery.toPage());
-        return R.success(page.convert(assembler::toVO));
+    @ApiOperation("通过条件获取班级信息")
+    public R<List<ClassInfoVO>> getListByCondition(long majorId) {
+        List<ClassInfo> list = service.getListByCondition(majorId);
+        return R.success(assembler.toListVO(list));
     }
 
 }
