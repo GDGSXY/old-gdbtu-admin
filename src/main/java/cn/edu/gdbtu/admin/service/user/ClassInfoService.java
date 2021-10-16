@@ -1,6 +1,9 @@
 package cn.edu.gdbtu.admin.service.user;
 
+import cn.edu.gdbtu.admin.common.auth.LoginUser;
+import cn.edu.gdbtu.admin.common.query.SearchPagingQuery;
 import cn.edu.gdbtu.admin.domain.user.entity.ClassInfo;
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 import java.util.List;
@@ -11,6 +14,8 @@ import java.util.List;
  */
 public interface ClassInfoService extends IService<ClassInfo> {
 
-    List<ClassInfo> getListByCondition(long majorId);
+    IPage<ClassInfo> searchByCondition(SearchPagingQuery query, long majorId);
+
+    List<ClassInfo> getByLoginUserPermission(LoginUser user);
 
 }
