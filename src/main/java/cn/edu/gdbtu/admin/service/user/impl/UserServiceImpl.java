@@ -16,6 +16,16 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserServiceImpl extends ServiceImpl<UserDao, User> implements UserService {
 
+    /**
+     * TODO: 临时方案
+     */
+    private static final Long DEFAULT_STUDENT_ROLE = 7L;
+
+    private static final String DEFAULT_USER_PASSWORD = "123456";
+
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public User getByUsername(String username) {
         LambdaQueryWrapper<User> wrapper = new LambdaQueryWrapper<User>()
@@ -23,11 +33,28 @@ public class UserServiceImpl extends ServiceImpl<UserDao, User> implements UserS
         return getBaseMapper().selectOne(wrapper);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public IPage<User> searchByCondition(SearchPagingQuery query) {
         LambdaQueryWrapper<User> wrapper = new LambdaQueryWrapper<User>()
                 .likeRight(query.getSearch() != null, User::getUsername, query.getSearch());
         return getBaseMapper().selectPage(query.toPage(), wrapper);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public User create(String pinyinName) {
+        User user = new User()
+                .setUsername(pinyinName)
+                .setPassword(DEFAULT_USER_PASSWORD)
+                .setSalt("")
+                .setRoleId(DEFAULT_STUDENT_ROLE);
+        getBaseMapper().insert(user);
+        return user;
     }
 
 }

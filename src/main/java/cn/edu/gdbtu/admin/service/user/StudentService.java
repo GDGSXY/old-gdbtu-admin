@@ -11,6 +11,20 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface StudentService extends IService<Student> {
 
+    /**
+     * 通过条件搜索 Student
+     *
+     * @param query   搜索条件
+     * @param classId 班级 id
+     * @return Page of Student
+     */
     IPage<Student> searchByConditions(SearchPagingQuery query, Long classId);
+
+    /**
+     * 创建 Student
+     *
+     * @param student 学生信息
+     */
+    void create(Student student);
 
 }
