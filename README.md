@@ -140,8 +140,6 @@
 | id | BIGINT UNSIGNED | PK |
 | user_id | CHAR(50) | 用户 id |
 | student_code | CHAR(50) | 学号 |
-| academy_id | BIGINT UNSIGNED | 学院 id |
-| major_id | BIGINT UNSIGNED | 专业 id |
 | class_id | BIGINT UNSIGNED | 班级 id |
 
 > uk (user_id)
