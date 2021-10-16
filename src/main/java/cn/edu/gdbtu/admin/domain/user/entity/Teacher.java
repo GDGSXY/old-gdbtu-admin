@@ -19,12 +19,16 @@ public class Teacher extends BaseEntity {
 
     private Long userId;
 
-    private String teacherCode;
-
     private Long academyId;
 
+    private String teacherCode;
 
     // 详细信息
+
+    /**
+     * 教师姓名
+     */
+    private String name;
 
     /**
      * 性别

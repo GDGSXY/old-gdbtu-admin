@@ -32,6 +32,11 @@ public class Student extends BaseEntity {
     // 详细信息
 
     /**
+     * 学生姓名
+     */
+    private String name;
+
+    /**
      * 性别
      */
     private UserGenderEnum gender;
