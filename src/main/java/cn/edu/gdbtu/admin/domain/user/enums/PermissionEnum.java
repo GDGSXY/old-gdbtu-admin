@@ -35,4 +35,8 @@ public enum PermissionEnum {
      * 班级管理
      */
     CLASS_MANAGEMENT,
+    /**
+     * 用户管理
+     */
+    USER_MANAGEMENT,
 }
