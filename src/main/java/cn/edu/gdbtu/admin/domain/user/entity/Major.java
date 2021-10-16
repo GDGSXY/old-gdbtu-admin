@@ -14,6 +14,8 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 public class Major extends BaseEntity {
 
+    private Long academyId;
+
     private String name;
 
 }

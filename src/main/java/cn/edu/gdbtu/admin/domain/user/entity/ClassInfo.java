@@ -19,8 +19,6 @@ public class ClassInfo extends BaseEntity {
 
     private String name;
 
-    private Long academyId;
-
     private Long majorId;
 
     private Long counselorId;

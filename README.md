@@ -173,6 +173,7 @@
 | 字段名 | 类型 | 描述 |
 | --- | --- | --- |
 | id | BIGINT UNSIGNED | PK |
+| academy_id | BIGINT UNSIGNED | 学院 id |
 | name | CHAR(50) | 专业名称 |
 
 > uk (name)
@@ -183,7 +184,6 @@
 | --- | --- | --- |
 | id | BIGINT UNSIGNED | PK |
 | name | CHAR(50) | 班级名称 |
-| academy_id | BIGINT UNSIGNED | 学院 id |
 | major_id | BIGINT UNSIGNED | 专业 id |
 | counselor_id | BIGINT UNSIGNED | 辅导员 id |
 | head_teacher_id | BIGINT UNSIGNED | 班主任 id |
