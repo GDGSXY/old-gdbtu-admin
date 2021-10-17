@@ -30,6 +30,8 @@ public interface UserService extends IService<User> {
      */
     IPage<User> searchByCondition(SearchPagingQuery query);
 
+    List<User> getAllByRoleLevel(RoleLevelEnum roleLevel);
+
     /**
      * 创建 User
      *
@@ -38,6 +40,6 @@ public interface UserService extends IService<User> {
      */
     User create(String pinyinName);
 
-    List<User> getAllByRoleLevel(RoleLevelEnum roleLevel);
+    User createTeacher(String name);
 
 }

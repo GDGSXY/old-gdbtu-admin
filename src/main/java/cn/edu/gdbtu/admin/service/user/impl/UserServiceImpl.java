@@ -29,6 +29,8 @@ public class UserServiceImpl extends ServiceImpl<UserDao, User> implements UserS
      */
     private static final Long DEFAULT_STUDENT_ROLE = 7L;
 
+    private static final Long DEFAULT_TEACHER_ROLE = 6L;
+
     private static final String DEFAULT_USER_PASSWORD = "123456";
 
     private final RoleService roleService;
@@ -53,6 +55,15 @@ public class UserServiceImpl extends ServiceImpl<UserDao, User> implements UserS
         return getBaseMapper().selectPage(query.toPage(), wrapper);
     }
 
+    @Override
+    public List<User> getAllByRoleLevel(RoleLevelEnum roleLevel) {
+        List<Role> roles = roleService.getAllByRoleLevel(roleLevel);
+        List<Long> roleIds = roles.stream().map(BaseEntity::getId).toList();
+        LambdaQueryWrapper<User> wrapper = new LambdaQueryWrapper<User>()
+                .in(User::getRoleId, roleIds);
+        return list(wrapper);
+    }
+
     /**
      * {@inheritDoc}
      */
@@ -68,12 +79,14 @@ public class UserServiceImpl extends ServiceImpl<UserDao, User> implements UserS
     }
 
     @Override
-    public List<User> getAllByRoleLevel(RoleLevelEnum roleLevel) {
-        List<Role> roles = roleService.getAllByRoleLevel(roleLevel);
-        List<Long> roleIds = roles.stream().map(BaseEntity::getId).toList();
-        LambdaQueryWrapper<User> wrapper = new LambdaQueryWrapper<User>()
-                .in(User::getRoleId, roleIds);
-        return list(wrapper);
+    public User createTeacher(String name) {
+        User user = new User()
+                .setUsername(name)
+                .setPassword(DEFAULT_USER_PASSWORD)
+                .setSalt("")
+                .setRoleId(DEFAULT_TEACHER_ROLE);
+        getBaseMapper().insert(user);
+        return user;
     }
 
 }

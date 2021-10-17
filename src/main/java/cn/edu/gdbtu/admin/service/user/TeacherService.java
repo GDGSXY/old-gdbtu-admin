@@ -25,4 +25,8 @@ public interface TeacherService extends IService<Teacher> {
      */
     List<Teacher> getAllHeadTeacherByAcademyId(long academyId);
 
+    void createTeacher(Teacher teacher);
+
+    void updateTeacher(Teacher teacher);
+
 }

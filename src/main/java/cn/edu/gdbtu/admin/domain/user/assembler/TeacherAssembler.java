@@ -1,5 +1,9 @@
 package cn.edu.gdbtu.admin.domain.user.assembler;
 
+import cn.edu.gdbtu.admin.common.entity.IgnoreToBaseEntity;
+import cn.edu.gdbtu.admin.common.entity.IgnoreToBaseEntityWithId;
+import cn.edu.gdbtu.admin.controller.cmd.CreateTeacherCMD;
+import cn.edu.gdbtu.admin.controller.cmd.UpdateTeacherCMD;
 import cn.edu.gdbtu.admin.controller.vo.TeacherVO;
 import cn.edu.gdbtu.admin.domain.user.entity.Teacher;
 import org.mapstruct.Mapper;
@@ -18,4 +22,9 @@ public interface TeacherAssembler {
 
     List<TeacherVO> toListVO(List<Teacher> list);
 
+    @IgnoreToBaseEntityWithId
+    Teacher toEntity(CreateTeacherCMD cmd, Long userId);
+
+    @IgnoreToBaseEntity
+    Teacher toEntity(UpdateTeacherCMD cmd, Long userId);
 }
