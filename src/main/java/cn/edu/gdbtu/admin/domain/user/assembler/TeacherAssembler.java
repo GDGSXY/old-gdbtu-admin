@@ -5,6 +5,8 @@ import cn.edu.gdbtu.admin.domain.user.entity.Teacher;
 import org.mapstruct.Mapper;
 import org.mapstruct.ReportingPolicy;
 
+import java.util.List;
+
 /**
  * @author Jover Zhang
  * @date 2021/10/16
@@ -13,5 +15,7 @@ import org.mapstruct.ReportingPolicy;
 public interface TeacherAssembler {
 
     TeacherVO toVO(Teacher entity);
+
+    List<TeacherVO> toListVO(List<Teacher> list);
 
 }
