@@ -72,4 +72,11 @@ public class ClassInfoController {
         return R.success();
     }
 
+    @DeleteMapping("/{classId}")
+    @ApiOperation("删除班级信息")
+    public R<Void> remove(@PathVariable("classId") long classId) {
+        classInfoAppService.removeClassInfo(classId);
+        return R.success();
+    }
+
 }

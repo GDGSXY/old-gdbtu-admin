@@ -9,4 +9,6 @@ public interface ClassInfoAppService {
 
     void updateClassInfo(UpdateClassInfoCMD cmd);
 
+    void removeClassInfo(long classId);
+
 }

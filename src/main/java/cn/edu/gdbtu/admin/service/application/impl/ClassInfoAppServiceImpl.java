@@ -11,6 +11,7 @@ import cn.edu.gdbtu.admin.service.user.ClassInfoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.Assert;
 
 @Service
 @RequiredArgsConstructor
@@ -40,6 +41,14 @@ public class ClassInfoAppServiceImpl implements ClassInfoAppService {
         newClassInfo = classInfoService.getById(cmd.getId());
         // Log
         operationLogService.logUpdate(PositionEnum.CLASS_MANAGEMENT, oldClassInfo, newClassInfo);
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public void removeClassInfo(long classId) {
+        Assert.isTrue(classInfoService.removeById(classId), "删除失败");
+        // Log
+        operationLogService.logRemove(PositionEnum.CLASS_MANAGEMENT, classId);
     }
 
 }
