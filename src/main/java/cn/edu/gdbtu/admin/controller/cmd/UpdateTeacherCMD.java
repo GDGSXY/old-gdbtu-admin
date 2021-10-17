@@ -14,40 +14,4 @@ public class UpdateTeacherCMD extends CreateTeacherCMD {
     @NotNull
     @ApiModelProperty(value = "教师 id", required = true)
     private Long id;
-
-    @NotNull
-    @ApiModelProperty(value = "身份证号")
-    private String identificationNumber;
-
-    @NotNull
-    @ApiModelProperty(value = "民族")
-    private String nativePlace;
-
-    @NotNull
-    @ApiModelProperty(value = "联系电话")
-    private String concatNumber;
-
-    @NotNull
-    @ApiModelProperty(value = "政治面貌")
-    private PoliticalOutlookEnum politicalOutlook;
-
-    @NotNull
-    @ApiModelProperty(value = "本科毕业学校")
-    private String undergraduateSchool;
-
-    @NotNull
-    @ApiModelProperty(value = "本科毕业专业")
-    private String undergraduateMajor;
-
-    @NotNull
-    @ApiModelProperty(value = "硕士毕业学校")
-    private String masterGraduateSchool;
-
-    @NotNull
-    @ApiModelProperty(value = "硕士毕业专业")
-    private String masterGraduateMajor;
-
-    @NotNull
-    @ApiModelProperty(value = "入职状态")
-    private TeacherJobStatusEnum jobStatus;
 }
