@@ -37,8 +37,11 @@ public class OperationLogContent {
     @SneakyThrows
     public static OperationLogContent createForUpdate(BaseEntity before, BaseEntity after) {
         Assert.isTrue(before.getClass() == after.getClass(), "类型必须相同");
+        Assert.isTrue(Objects.equals(before.getId(), after.getId()), "id 必须相同");
         Map<String, Object> beforeMap = Maps.newHashMap();
         Map<String, Object> afterMap = Maps.newHashMap();
+        beforeMap.put("id", before.getId());
+        afterMap.put("id", after.getId());
 
         for (PropertyDescriptor descriptor : BeanUtils.getPropertyDescriptors(before.getClass())) {
             Method readMethod = descriptor.getReadMethod();

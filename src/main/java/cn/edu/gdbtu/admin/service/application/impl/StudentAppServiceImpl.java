@@ -48,6 +48,7 @@ public class StudentAppServiceImpl implements StudentAppService {
         Student oldStudent = studentService.getById(cmd.getId());
         Student newStudent = studentAssembler.toEntity(cmd, oldStudent.getUserId());
         studentService.updateStudent(newStudent);
+        newStudent = studentService.getById(cmd.getId());
         // log
         operationLogService.logUpdate(PositionEnum.STUDENT_MANAGEMENT, oldStudent, newStudent);
     }
