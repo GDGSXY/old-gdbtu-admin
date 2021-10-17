@@ -18,4 +18,7 @@ public interface MajorService extends IService<Major> {
 
     List<Major> getByLoginUserPermission(LoginUser user, long academyId);
 
+    void create(Major major);
+
+    void updateMajor(Major major);
 }

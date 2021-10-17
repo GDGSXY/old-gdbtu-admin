@@ -5,19 +5,20 @@ import cn.edu.gdbtu.admin.common.auth.LoginUser;
 import cn.edu.gdbtu.admin.common.auth.RequiredPermission;
 import cn.edu.gdbtu.admin.common.query.SearchPagingQuery;
 import cn.edu.gdbtu.admin.common.web.R;
+import cn.edu.gdbtu.admin.controller.cmd.CreateMajorCMD;
+import cn.edu.gdbtu.admin.controller.cmd.UpdateMajorCMD;
 import cn.edu.gdbtu.admin.controller.vo.MajorVO;
 import cn.edu.gdbtu.admin.domain.user.assembler.MajorAssembler;
 import cn.edu.gdbtu.admin.domain.user.entity.Major;
 import cn.edu.gdbtu.admin.domain.user.enums.PermissionEnum;
+import cn.edu.gdbtu.admin.service.application.MajorAppService;
 import cn.edu.gdbtu.admin.service.user.MajorService;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -37,6 +38,8 @@ public class MajorController {
 
     private final MajorAssembler assembler;
 
+    private final MajorAppService majorAppService;
+
     @GetMapping
     @ApiOperation("通过条件搜索专业信息")
     public R<IPage<MajorVO>> searchByCondition(@Valid SearchPagingQuery query,
@@ -53,4 +56,24 @@ public class MajorController {
         return R.success(assembler.toListVO(list));
     }
 
+    @PostMapping
+    @ApiOperation("添加专业")
+    public R<Void> create(@Valid @RequestBody CreateMajorCMD cmd) {
+        majorAppService.createMajor(cmd);
+        return R.success();
+    }
+
+    @PutMapping
+    @ApiOperation("修改专业")
+    public R<Void> update(@Valid @RequestBody UpdateMajorCMD cmd) {
+        majorAppService.updateMajor(cmd);
+        return R.success();
+    }
+
+    @DeleteMapping("/{majorId}")
+    @ApiOperation("删除专业")
+    public R<Void> delete(@PathVariable("majorId") long majorId) {
+        majorAppService.deleteMajor(majorId);
+        return R.success();
+    }
 }

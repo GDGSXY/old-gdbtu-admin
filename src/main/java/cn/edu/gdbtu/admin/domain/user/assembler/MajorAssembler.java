@@ -1,5 +1,9 @@
 package cn.edu.gdbtu.admin.domain.user.assembler;
 
+import cn.edu.gdbtu.admin.common.entity.IgnoreToBaseEntity;
+import cn.edu.gdbtu.admin.common.entity.IgnoreToBaseEntityWithId;
+import cn.edu.gdbtu.admin.controller.cmd.CreateMajorCMD;
+import cn.edu.gdbtu.admin.controller.cmd.UpdateMajorCMD;
 import cn.edu.gdbtu.admin.controller.vo.MajorVO;
 import cn.edu.gdbtu.admin.domain.user.entity.Major;
 import org.mapstruct.Mapper;
@@ -18,4 +22,9 @@ public interface MajorAssembler {
 
     List<MajorVO> toListVO(List<Major> entities);
 
+    @IgnoreToBaseEntityWithId
+    Major toEntity(CreateMajorCMD cmd);
+
+    @IgnoreToBaseEntity
+    Major toEntity(UpdateMajorCMD cmd);
 }
