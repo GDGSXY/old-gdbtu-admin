@@ -31,14 +31,12 @@ public class CreateTeacherCMD {
     @ApiModelProperty(value = "政治面貌", required = true)
     private PoliticalOutlookEnum politicalOutlook;
 
-
     @ApiModelProperty(value = "身份证号")
     private String identificationNumber;
 
     @ApiModelProperty(value = "民族")
     private String nativePlace;
 
-    @NotNull
     @ApiModelProperty(value = "联系电话")
     private String concatNumber;
 
@@ -56,4 +54,5 @@ public class CreateTeacherCMD {
 
     @ApiModelProperty(value = "入职状态")
     private TeacherJobStatusEnum jobStatus;
+
 }
