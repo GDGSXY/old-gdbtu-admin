@@ -52,4 +52,13 @@ public class ClassInfoServiceImpl extends ServiceImpl<ClassInfoDao, ClassInfo> i
         save(classInfo);
     }
 
+    @Override
+    public void updateClassInfo(ClassInfo classInfo) {
+        Assert.notNull(majorService.getById(classInfo.getMajorId()), "专业不存在");
+        // TODO: 待校验用户是否为 辅导员/班主任
+        Assert.notNull(userService.getById(classInfo.getCounselorId()), "辅导员不存在");
+        Assert.notNull(userService.getById(classInfo.getHeadTeacherId()), "班主任不存在");
+        Assert.isTrue(updateById(classInfo), "更新失败");
+    }
+
 }

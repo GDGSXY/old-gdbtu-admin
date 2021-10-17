@@ -20,4 +20,6 @@ public interface ClassInfoService extends IService<ClassInfo> {
 
     void create(ClassInfo classInfo);
 
+    void updateClassInfo(ClassInfo classInfo);
+
 }

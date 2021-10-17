@@ -1,6 +1,7 @@
 package cn.edu.gdbtu.admin.service.application.impl;
 
 import cn.edu.gdbtu.admin.controller.cmd.CreateClassInfoCMD;
+import cn.edu.gdbtu.admin.controller.cmd.UpdateClassInfoCMD;
 import cn.edu.gdbtu.admin.domain.log.enums.PositionEnum;
 import cn.edu.gdbtu.admin.domain.user.assembler.ClassInfoAssembler;
 import cn.edu.gdbtu.admin.domain.user.entity.ClassInfo;
@@ -28,6 +29,17 @@ public class ClassInfoAppServiceImpl implements ClassInfoAppService {
         classInfoService.create(classInfo);
         // Log
         operationLogService.logCreate(PositionEnum.CLASS_MANAGEMENT, classInfo.getId());
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public void updateClassInfo(UpdateClassInfoCMD cmd) {
+        ClassInfo oldClassInfo = classInfoService.getById(cmd.getId());
+        ClassInfo newClassInfo = classInfoAssembler.toEntity(cmd);
+        classInfoService.updateClassInfo(newClassInfo);
+        newClassInfo = classInfoService.getById(cmd.getId());
+        // Log
+        operationLogService.logUpdate(PositionEnum.CLASS_MANAGEMENT, oldClassInfo, newClassInfo);
     }
 
 }

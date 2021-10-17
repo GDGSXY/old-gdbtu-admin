@@ -6,6 +6,7 @@ import cn.edu.gdbtu.admin.common.auth.RequiredPermission;
 import cn.edu.gdbtu.admin.common.query.SearchPagingQuery;
 import cn.edu.gdbtu.admin.common.web.R;
 import cn.edu.gdbtu.admin.controller.cmd.CreateClassInfoCMD;
+import cn.edu.gdbtu.admin.controller.cmd.UpdateClassInfoCMD;
 import cn.edu.gdbtu.admin.controller.vo.ClassInfoVO;
 import cn.edu.gdbtu.admin.domain.user.assembler.ClassInfoAssembler;
 import cn.edu.gdbtu.admin.domain.user.entity.ClassInfo;
@@ -61,6 +62,13 @@ public class ClassInfoController {
     @ApiOperation("添加班级信息")
     public R<Void> create(@Valid @RequestBody CreateClassInfoCMD cmd) {
         classInfoAppService.createClassInfo(cmd);
+        return R.success();
+    }
+
+    @PutMapping
+    @ApiOperation("修改班级信息")
+    public R<Void> update(@Valid @RequestBody UpdateClassInfoCMD cmd) {
+        classInfoAppService.updateClassInfo(cmd);
         return R.success();
     }
 
