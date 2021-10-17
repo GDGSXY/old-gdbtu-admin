@@ -21,6 +21,9 @@ public class UserServiceImpl extends ServiceImpl<UserDao, User> implements UserS
      */
     private static final Long DEFAULT_STUDENT_ROLE = 7L;
 
+
+    private static final Long DEFAULT_TEACHER_ROLE = 6L;
+
     private static final String DEFAULT_USER_PASSWORD = "123456";
 
     /**
@@ -53,6 +56,18 @@ public class UserServiceImpl extends ServiceImpl<UserDao, User> implements UserS
                 .setPassword(DEFAULT_USER_PASSWORD)
                 .setSalt("")
                 .setRoleId(DEFAULT_STUDENT_ROLE);
+        getBaseMapper().insert(user);
+        return user;
+    }
+
+
+    @Override
+    public User createTeacher(String name) {
+        User user = new User()
+                .setUsername(name)
+                .setPassword(DEFAULT_USER_PASSWORD)
+                .setSalt("")
+                .setRoleId(DEFAULT_TEACHER_ROLE);
         getBaseMapper().insert(user);
         return user;
     }

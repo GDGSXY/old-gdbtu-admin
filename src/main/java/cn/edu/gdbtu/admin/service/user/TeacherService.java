@@ -13,4 +13,7 @@ public interface TeacherService extends IService<Teacher> {
 
     IPage<Teacher> searchByConditions(SearchPagingQuery query, Long academyId);
 
+    void createTeacher(Teacher teacher);
+
+    void updateTeacher(Teacher teacher);
 }

@@ -35,4 +35,5 @@ public interface UserService extends IService<User> {
      */
     User create(String pinyinName);
 
+    User createTeacher(String name);
 }
