@@ -43,6 +43,7 @@ public class MajorAppServiceImpl implements MajorAppService {
     }
 
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public void deleteMajor(long majorId) {
         majorService.removeById(majorId);
 
