@@ -32,7 +32,8 @@ public class OperationLogServiceImpl implements OperationLogService {
     @Override
     public IPage<OperationLog> getPageByPosition(PagingQuery query, PositionEnum position) {
         LambdaQueryWrapper<OperationLog> wrapper = new LambdaQueryWrapper<OperationLog>()
-                .eq(OperationLog::getPosition, position);
+                .eq(OperationLog::getPosition, position)
+                .orderByDesc(BaseEntity::getGmtCreate);
         return dao.selectPage(query.toPage(), wrapper);
     }
 
