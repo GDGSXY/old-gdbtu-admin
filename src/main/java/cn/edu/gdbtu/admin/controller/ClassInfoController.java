@@ -9,15 +9,14 @@ import cn.edu.gdbtu.admin.controller.vo.ClassInfoVO;
 import cn.edu.gdbtu.admin.domain.user.assembler.ClassInfoAssembler;
 import cn.edu.gdbtu.admin.domain.user.entity.ClassInfo;
 import cn.edu.gdbtu.admin.domain.user.enums.PermissionEnum;
+import cn.edu.gdbtu.admin.service.application.ClassInfoAppService;
 import cn.edu.gdbtu.admin.service.user.ClassInfoService;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -39,6 +38,8 @@ public class ClassInfoController {
 
     private final ClassInfoAssembler assembler;
 
+    private final ClassInfoAppService classInfoAppService;
+
     @GetMapping
     @ApiOperation("通过条件获取班级信息")
     public R<IPage<ClassInfoVO>> getListByCondition(@Valid SearchPagingQuery query,
@@ -53,6 +54,13 @@ public class ClassInfoController {
         LoginUser user = AuthUtil.getUser();
         List<ClassInfo> list = service.getByLoginUserPermission(user, majorId);
         return R.success(assembler.toListVO(list));
+    }
+
+    @PostMapping
+    @ApiOperation("添加班级信息")
+    public R<Void> create(@Valid @RequestBody CreateClassInfoCMD cmd) {
+        classInfoAppService.createClassInfo(cmd);
+        return R.success();
     }
 
 }
