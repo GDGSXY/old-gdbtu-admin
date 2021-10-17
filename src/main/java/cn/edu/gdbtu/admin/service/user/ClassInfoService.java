@@ -18,4 +18,6 @@ public interface ClassInfoService extends IService<ClassInfo> {
 
     List<ClassInfo> getByLoginUserPermission(LoginUser user, Long majorId);
 
+    void create(ClassInfo classInfo);
+
 }
