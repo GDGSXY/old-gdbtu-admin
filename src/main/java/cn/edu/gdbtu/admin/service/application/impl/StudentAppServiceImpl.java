@@ -2,10 +2,12 @@ package cn.edu.gdbtu.admin.service.application.impl;
 
 import cn.edu.gdbtu.admin.controller.cmd.CreateStudentCMD;
 import cn.edu.gdbtu.admin.controller.cmd.UpdateStudentCMD;
+import cn.edu.gdbtu.admin.domain.log.enums.PositionEnum;
 import cn.edu.gdbtu.admin.domain.user.assembler.StudentAssembler;
 import cn.edu.gdbtu.admin.domain.user.entity.Student;
 import cn.edu.gdbtu.admin.domain.user.entity.User;
 import cn.edu.gdbtu.admin.service.application.StudentAppService;
+import cn.edu.gdbtu.admin.service.log.OperationLogService;
 import cn.edu.gdbtu.admin.service.user.StudentService;
 import cn.edu.gdbtu.admin.service.user.UserService;
 import lombok.RequiredArgsConstructor;
@@ -24,6 +26,8 @@ public class StudentAppServiceImpl implements StudentAppService {
 
     private final StudentService studentService;
 
+    private final OperationLogService operationLogService;
+
     private final StudentAssembler studentAssembler;
 
     @Override
@@ -34,6 +38,8 @@ public class StudentAppServiceImpl implements StudentAppService {
         // 创建 Student
         Student student = studentAssembler.toEntity(cmd, user.getId());
         studentService.create(student);
+        // log
+        operationLogService.logCreate(PositionEnum.STUDENT_MANAGEMENT, student.getId());
     }
 
     @Override
@@ -42,6 +48,8 @@ public class StudentAppServiceImpl implements StudentAppService {
         Student oldStudent = studentService.getById(cmd.getId());
         Student newStudent = studentAssembler.toEntity(cmd, oldStudent.getUserId());
         studentService.updateStudent(newStudent);
+        // log
+        operationLogService.logUpdate(PositionEnum.STUDENT_MANAGEMENT, oldStudent, newStudent);
     }
 
     @Override
@@ -50,6 +58,8 @@ public class StudentAppServiceImpl implements StudentAppService {
         Student student = studentService.getById(studentId);
         studentService.removeById(studentId);
         userService.removeById(student.getUserId());
+        // log
+        operationLogService.logRemove(PositionEnum.STUDENT_MANAGEMENT, studentId);
     }
 
 }
