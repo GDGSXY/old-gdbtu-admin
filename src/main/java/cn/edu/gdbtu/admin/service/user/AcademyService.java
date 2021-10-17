@@ -18,4 +18,6 @@ public interface AcademyService extends IService<Academy> {
 
     List<Academy> getByLoginUserPermission(LoginUser user);
 
+    void updateAcademy(Academy newAcademy);
+
 }

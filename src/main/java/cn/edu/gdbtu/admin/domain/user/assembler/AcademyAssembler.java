@@ -1,5 +1,9 @@
 package cn.edu.gdbtu.admin.domain.user.assembler;
 
+import cn.edu.gdbtu.admin.common.entity.IgnoreToBaseEntity;
+import cn.edu.gdbtu.admin.common.entity.IgnoreToBaseEntityWithId;
+import cn.edu.gdbtu.admin.controller.cmd.CreateAcademyCMD;
+import cn.edu.gdbtu.admin.controller.cmd.UpdateAcademyCMD;
 import cn.edu.gdbtu.admin.controller.vo.AcademyVO;
 import cn.edu.gdbtu.admin.domain.user.entity.Academy;
 import org.mapstruct.Mapper;
@@ -18,4 +22,9 @@ public interface AcademyAssembler {
 
     List<AcademyVO> toListVO(List<Academy> entities);
 
+    @IgnoreToBaseEntityWithId
+    Academy toEntity(CreateAcademyCMD cmd);
+
+    @IgnoreToBaseEntity
+    Academy toEntity(UpdateAcademyCMD cmd);
 }
