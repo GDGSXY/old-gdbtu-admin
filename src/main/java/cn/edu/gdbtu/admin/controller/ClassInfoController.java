@@ -5,6 +5,7 @@ import cn.edu.gdbtu.admin.common.auth.LoginUser;
 import cn.edu.gdbtu.admin.common.auth.RequiredPermission;
 import cn.edu.gdbtu.admin.common.query.SearchPagingQuery;
 import cn.edu.gdbtu.admin.common.web.R;
+import cn.edu.gdbtu.admin.controller.cmd.CreateClassInfoCMD;
 import cn.edu.gdbtu.admin.controller.vo.ClassInfoVO;
 import cn.edu.gdbtu.admin.domain.user.assembler.ClassInfoAssembler;
 import cn.edu.gdbtu.admin.domain.user.entity.ClassInfo;
