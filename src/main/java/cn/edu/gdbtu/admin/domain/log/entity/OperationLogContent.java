@@ -1,10 +1,18 @@
 package cn.edu.gdbtu.admin.domain.log.entity;
 
 import cn.edu.gdbtu.admin.common.entity.BaseEntity;
+import com.google.common.collect.Maps;
 import lombok.Data;
+import lombok.SneakyThrows;
 import lombok.experimental.Accessors;
+import org.springframework.beans.BeanUtils;
+import org.springframework.util.Assert;
 
+import java.beans.PropertyDescriptor;
+import java.lang.reflect.Method;
 import java.util.Collections;
+import java.util.Map;
+import java.util.Objects;
 
 /**
  * @author Jover Zhang
@@ -26,11 +34,28 @@ public class OperationLogContent {
                 .setAfter(Collections.singletonMap("id", id));
     }
 
+    @SneakyThrows
     public static OperationLogContent createForUpdate(BaseEntity before, BaseEntity after) {
+        Assert.isTrue(before.getClass() == after.getClass(), "类型必须相同");
+        Map<String, Object> beforeMap = Maps.newHashMap();
+        Map<String, Object> afterMap = Maps.newHashMap();
+
+        for (PropertyDescriptor descriptor : BeanUtils.getPropertyDescriptors(before.getClass())) {
+            Method readMethod = descriptor.getReadMethod();
+            if (readMethod != null) {
+                Object beforeData = readMethod.invoke(before);
+                Object afterData = readMethod.invoke(after);
+                if (!Objects.equals(beforeData, afterData)) {
+                    beforeMap.put(descriptor.getName(), beforeData);
+                    afterMap.put(descriptor.getName(), afterData);
+                }
+            }
+        }
+
         return new OperationLogContent()
                 .setType(Type.UPDATE)
-                .setBefore(before)
-                .setAfter(after);
+                .setBefore(beforeMap)
+                .setAfter(afterMap);
     }
 
     public static OperationLogContent createForRemove(long id) {
