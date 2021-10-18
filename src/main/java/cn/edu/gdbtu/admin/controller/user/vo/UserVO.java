@@ -1,4 +1,4 @@
-package cn.edu.gdbtu.admin.controller.vo;
+package cn.edu.gdbtu.admin.controller.user.vo;
 
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;

@@ -1,7 +1,7 @@
 package cn.edu.gdbtu.admin.service.application.impl;
 
-import cn.edu.gdbtu.admin.controller.cmd.CreateAcademyCMD;
-import cn.edu.gdbtu.admin.controller.cmd.UpdateAcademyCMD;
+import cn.edu.gdbtu.admin.controller.user.cmd.CreateAcademyCMD;
+import cn.edu.gdbtu.admin.controller.user.cmd.UpdateAcademyCMD;
 import cn.edu.gdbtu.admin.domain.log.enums.PositionEnum;
 import cn.edu.gdbtu.admin.domain.user.assembler.AcademyAssembler;
 import cn.edu.gdbtu.admin.domain.user.entity.Academy;

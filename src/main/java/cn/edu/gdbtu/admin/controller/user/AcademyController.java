@@ -1,13 +1,13 @@
-package cn.edu.gdbtu.admin.controller;
+package cn.edu.gdbtu.admin.controller.user;
 
 import cn.edu.gdbtu.admin.common.auth.AuthUtil;
 import cn.edu.gdbtu.admin.common.auth.LoginUser;
 import cn.edu.gdbtu.admin.common.auth.RequiredPermission;
 import cn.edu.gdbtu.admin.common.query.SearchPagingQuery;
 import cn.edu.gdbtu.admin.common.web.R;
-import cn.edu.gdbtu.admin.controller.cmd.CreateAcademyCMD;
-import cn.edu.gdbtu.admin.controller.cmd.UpdateAcademyCMD;
-import cn.edu.gdbtu.admin.controller.vo.AcademyVO;
+import cn.edu.gdbtu.admin.controller.user.cmd.CreateAcademyCMD;
+import cn.edu.gdbtu.admin.controller.user.cmd.UpdateAcademyCMD;
+import cn.edu.gdbtu.admin.controller.user.vo.AcademyVO;
 import cn.edu.gdbtu.admin.domain.user.assembler.AcademyAssembler;
 import cn.edu.gdbtu.admin.domain.user.entity.Academy;
 import cn.edu.gdbtu.admin.domain.user.enums.PermissionEnum;
@@ -15,7 +15,6 @@ import cn.edu.gdbtu.admin.service.application.AcademyAppService;
 import cn.edu.gdbtu.admin.service.user.AcademyService;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiModelProperty;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;

@@ -1,7 +1,7 @@
 package cn.edu.gdbtu.admin.service.application;
 
-import cn.edu.gdbtu.admin.controller.cmd.CreateStudentCMD;
-import cn.edu.gdbtu.admin.controller.cmd.UpdateStudentCMD;
+import cn.edu.gdbtu.admin.controller.user.cmd.CreateStudentCMD;
+import cn.edu.gdbtu.admin.controller.user.cmd.UpdateStudentCMD;
 
 /**
  * @author Jover Zhang

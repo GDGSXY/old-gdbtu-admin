@@ -1,4 +1,4 @@
-package cn.edu.gdbtu.admin.controller.vo;
+package cn.edu.gdbtu.admin.controller.user.vo;
 
 import cn.edu.gdbtu.admin.domain.user.enums.PoliticalOutlookEnum;
 import cn.edu.gdbtu.admin.domain.user.enums.TeacherJobStatusEnum;

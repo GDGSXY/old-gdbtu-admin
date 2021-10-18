@@ -1,7 +1,7 @@
 package cn.edu.gdbtu.admin.service.application;
 
-import cn.edu.gdbtu.admin.controller.cmd.CreateClassInfoCMD;
-import cn.edu.gdbtu.admin.controller.cmd.UpdateClassInfoCMD;
+import cn.edu.gdbtu.admin.controller.user.cmd.CreateClassInfoCMD;
+import cn.edu.gdbtu.admin.controller.user.cmd.UpdateClassInfoCMD;
 
 public interface ClassInfoAppService {
 

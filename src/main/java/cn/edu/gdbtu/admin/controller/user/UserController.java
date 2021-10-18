@@ -1,13 +1,13 @@
-package cn.edu.gdbtu.admin.controller;
+package cn.edu.gdbtu.admin.controller.user;
 
 import cn.edu.gdbtu.admin.common.auth.RequiredPermission;
 import cn.edu.gdbtu.admin.common.query.SearchPagingQuery;
 import cn.edu.gdbtu.admin.common.web.R;
-import cn.edu.gdbtu.admin.controller.vo.RoleVO;
-import cn.edu.gdbtu.admin.domain.user.assembler.RoleAssembler;
-import cn.edu.gdbtu.admin.domain.user.entity.Role;
+import cn.edu.gdbtu.admin.controller.user.vo.UserVO;
+import cn.edu.gdbtu.admin.domain.user.assembler.UserAssembler;
+import cn.edu.gdbtu.admin.domain.user.entity.User;
 import cn.edu.gdbtu.admin.domain.user.enums.PermissionEnum;
-import cn.edu.gdbtu.admin.service.user.RoleService;
+import cn.edu.gdbtu.admin.service.user.UserService;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -24,19 +24,19 @@ import javax.validation.Valid;
  */
 @RestController
 @RequiredArgsConstructor
-@Api("角色信息 Controller")
-@RequestMapping("/v1/role")
-@RequiredPermission(PermissionEnum.ROLE_MANAGEMENT)
-public class RoleController {
+@Api("教职工信息 Controller")
+@RequestMapping("/v1/user")
+@RequiredPermission(PermissionEnum.TEACHER_MANAGEMENT)
+public class UserController {
 
-    private final RoleService service;
+    private final UserService service;
 
-    private final RoleAssembler assembler;
+    private final UserAssembler assembler;
 
     @GetMapping
-    @ApiOperation("通过条件搜索角色信息")
-    public R<IPage<RoleVO>> searchByCondition(@Valid SearchPagingQuery query) {
-        IPage<Role> page = service.searchByCondition(query);
+    @ApiOperation("通过条件搜索用户信息")
+    public R<IPage<UserVO>> searchByCondition(@Valid SearchPagingQuery query) {
+        IPage<User> page = service.searchByCondition(query);
         return R.success(page.convert(assembler::toVO));
     }
 

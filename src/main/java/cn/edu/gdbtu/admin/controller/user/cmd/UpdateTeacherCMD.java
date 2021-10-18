@@ -1,10 +1,9 @@
-package cn.edu.gdbtu.admin.controller.cmd;
+package cn.edu.gdbtu.admin.controller.user.cmd;
 
-import cn.edu.gdbtu.admin.domain.user.enums.PoliticalOutlookEnum;
-import cn.edu.gdbtu.admin.domain.user.enums.TeacherJobStatusEnum;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+
 import javax.validation.constraints.NotNull;
 
 @Data
