@@ -18,4 +18,10 @@ public interface RoleService extends IService<Role> {
 
     List<Role> getAllByRoleLevel(RoleLevelEnum roleLevel);
 
+    void create(Role role);
+
+    void updateRole(Role role);
+
+    void removeRoleById(long roleId);
+
 }
