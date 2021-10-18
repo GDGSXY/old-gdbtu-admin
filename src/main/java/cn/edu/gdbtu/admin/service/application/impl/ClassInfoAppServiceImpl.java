@@ -1,7 +1,7 @@
 package cn.edu.gdbtu.admin.service.application.impl;
 
-import cn.edu.gdbtu.admin.controller.cmd.CreateClassInfoCMD;
-import cn.edu.gdbtu.admin.controller.cmd.UpdateClassInfoCMD;
+import cn.edu.gdbtu.admin.controller.user.cmd.CreateClassInfoCMD;
+import cn.edu.gdbtu.admin.controller.user.cmd.UpdateClassInfoCMD;
 import cn.edu.gdbtu.admin.domain.log.enums.PositionEnum;
 import cn.edu.gdbtu.admin.domain.user.assembler.ClassInfoAssembler;
 import cn.edu.gdbtu.admin.domain.user.entity.ClassInfo;

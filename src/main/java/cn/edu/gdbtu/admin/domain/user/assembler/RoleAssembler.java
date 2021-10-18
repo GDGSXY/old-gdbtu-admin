@@ -1,6 +1,6 @@
 package cn.edu.gdbtu.admin.domain.user.assembler;
 
-import cn.edu.gdbtu.admin.controller.vo.RoleVO;
+import cn.edu.gdbtu.admin.controller.user.vo.RoleVO;
 import cn.edu.gdbtu.admin.domain.user.entity.Role;
 import org.mapstruct.Mapper;
 import org.mapstruct.ReportingPolicy;

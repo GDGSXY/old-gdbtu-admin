@@ -1,7 +1,7 @@
 package cn.edu.gdbtu.admin.service.application.impl;
 
-import cn.edu.gdbtu.admin.controller.cmd.CreateTeacherCMD;
-import cn.edu.gdbtu.admin.controller.cmd.UpdateTeacherCMD;
+import cn.edu.gdbtu.admin.controller.user.cmd.CreateTeacherCMD;
+import cn.edu.gdbtu.admin.controller.user.cmd.UpdateTeacherCMD;
 import cn.edu.gdbtu.admin.domain.log.enums.PositionEnum;
 import cn.edu.gdbtu.admin.domain.user.assembler.TeacherAssembler;
 import cn.edu.gdbtu.admin.domain.user.entity.Teacher;

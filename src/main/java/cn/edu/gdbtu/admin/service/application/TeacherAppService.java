@@ -1,7 +1,7 @@
 package cn.edu.gdbtu.admin.service.application;
 
-import cn.edu.gdbtu.admin.controller.cmd.CreateTeacherCMD;
-import cn.edu.gdbtu.admin.controller.cmd.UpdateTeacherCMD;
+import cn.edu.gdbtu.admin.controller.user.cmd.CreateTeacherCMD;
+import cn.edu.gdbtu.admin.controller.user.cmd.UpdateTeacherCMD;
 
 public interface TeacherAppService {
     void createTeacher(CreateTeacherCMD cmd);

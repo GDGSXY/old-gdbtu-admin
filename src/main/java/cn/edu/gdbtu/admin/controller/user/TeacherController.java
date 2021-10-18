@@ -1,11 +1,11 @@
-package cn.edu.gdbtu.admin.controller;
+package cn.edu.gdbtu.admin.controller.user;
 
 import cn.edu.gdbtu.admin.common.auth.RequiredPermission;
 import cn.edu.gdbtu.admin.common.query.SearchPagingQuery;
 import cn.edu.gdbtu.admin.common.web.R;
-import cn.edu.gdbtu.admin.controller.cmd.CreateTeacherCMD;
-import cn.edu.gdbtu.admin.controller.cmd.UpdateTeacherCMD;
-import cn.edu.gdbtu.admin.controller.vo.TeacherVO;
+import cn.edu.gdbtu.admin.controller.user.cmd.CreateTeacherCMD;
+import cn.edu.gdbtu.admin.controller.user.cmd.UpdateTeacherCMD;
+import cn.edu.gdbtu.admin.controller.user.vo.TeacherVO;
 import cn.edu.gdbtu.admin.domain.user.assembler.TeacherAssembler;
 import cn.edu.gdbtu.admin.domain.user.entity.Teacher;
 import cn.edu.gdbtu.admin.domain.user.enums.PermissionEnum;

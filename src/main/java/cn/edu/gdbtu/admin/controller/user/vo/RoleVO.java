@@ -1,4 +1,4 @@
-package cn.edu.gdbtu.admin.controller.vo;
+package cn.edu.gdbtu.admin.controller.user.vo;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -9,16 +9,13 @@ import lombok.Data;
  * @date 2021/10/16
  */
 @Data
-@ApiModel("专业信息")
-public class MajorVO {
+@ApiModel("角色信息")
+public class RoleVO {
 
     @ApiModelProperty("id")
     private Long id;
 
-    @ApiModelProperty("学院 id")
-    private Long academyId;
-
-    @ApiModelProperty("专业名称")
+    @ApiModelProperty("角色名称")
     private String name;
 
 }

@@ -1,8 +1,8 @@
 package cn.edu.gdbtu.admin.domain.user.assembler;
 
 import cn.edu.gdbtu.admin.common.auth.LoginUser;
-import cn.edu.gdbtu.admin.controller.vo.LoginUserVO;
-import cn.edu.gdbtu.admin.controller.vo.UserVO;
+import cn.edu.gdbtu.admin.controller.user.vo.LoginUserVO;
+import cn.edu.gdbtu.admin.controller.user.vo.UserVO;
 import cn.edu.gdbtu.admin.domain.user.entity.User;
 import org.mapstruct.Mapper;
 import org.mapstruct.ReportingPolicy;

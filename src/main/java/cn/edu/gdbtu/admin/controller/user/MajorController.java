@@ -1,13 +1,13 @@
-package cn.edu.gdbtu.admin.controller;
+package cn.edu.gdbtu.admin.controller.user;
 
 import cn.edu.gdbtu.admin.common.auth.AuthUtil;
 import cn.edu.gdbtu.admin.common.auth.LoginUser;
 import cn.edu.gdbtu.admin.common.auth.RequiredPermission;
 import cn.edu.gdbtu.admin.common.query.SearchPagingQuery;
 import cn.edu.gdbtu.admin.common.web.R;
-import cn.edu.gdbtu.admin.controller.cmd.CreateMajorCMD;
-import cn.edu.gdbtu.admin.controller.cmd.UpdateMajorCMD;
-import cn.edu.gdbtu.admin.controller.vo.MajorVO;
+import cn.edu.gdbtu.admin.controller.user.cmd.CreateMajorCMD;
+import cn.edu.gdbtu.admin.controller.user.cmd.UpdateMajorCMD;
+import cn.edu.gdbtu.admin.controller.user.vo.MajorVO;
 import cn.edu.gdbtu.admin.domain.user.assembler.MajorAssembler;
 import cn.edu.gdbtu.admin.domain.user.entity.Major;
 import cn.edu.gdbtu.admin.domain.user.enums.PermissionEnum;

@@ -1,4 +1,4 @@
-package cn.edu.gdbtu.admin.controller.cmd;
+package cn.edu.gdbtu.admin.controller.user.cmd;
 
 import lombok.Data;
 

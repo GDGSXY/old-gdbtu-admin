@@ -1,10 +1,10 @@
-package cn.edu.gdbtu.admin.controller;
+package cn.edu.gdbtu.admin.controller.user;
 
 import cn.edu.gdbtu.admin.common.auth.JwtUtil;
 import cn.edu.gdbtu.admin.common.auth.LoginUser;
 import cn.edu.gdbtu.admin.common.web.R;
-import cn.edu.gdbtu.admin.controller.cmd.LoginUserCMD;
-import cn.edu.gdbtu.admin.controller.vo.LoginUserVO;
+import cn.edu.gdbtu.admin.controller.user.cmd.LoginUserCMD;
+import cn.edu.gdbtu.admin.controller.user.vo.LoginUserVO;
 import cn.edu.gdbtu.admin.domain.user.assembler.UserAssembler;
 import cn.edu.gdbtu.admin.service.user.AuthService;
 import io.swagger.annotations.Api;

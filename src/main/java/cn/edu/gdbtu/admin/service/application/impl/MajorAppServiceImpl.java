@@ -1,7 +1,7 @@
 package cn.edu.gdbtu.admin.service.application.impl;
 
-import cn.edu.gdbtu.admin.controller.cmd.CreateMajorCMD;
-import cn.edu.gdbtu.admin.controller.cmd.UpdateMajorCMD;
+import cn.edu.gdbtu.admin.controller.user.cmd.CreateMajorCMD;
+import cn.edu.gdbtu.admin.controller.user.cmd.UpdateMajorCMD;
 import cn.edu.gdbtu.admin.domain.log.enums.PositionEnum;
 import cn.edu.gdbtu.admin.domain.user.assembler.MajorAssembler;
 import cn.edu.gdbtu.admin.domain.user.entity.Major;

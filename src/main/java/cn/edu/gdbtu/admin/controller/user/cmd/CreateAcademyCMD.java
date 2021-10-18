@@ -1,7 +1,8 @@
-package cn.edu.gdbtu.admin.controller.cmd;
+package cn.edu.gdbtu.admin.controller.user.cmd;
 
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+
 import javax.validation.constraints.NotNull;
 
 @Data

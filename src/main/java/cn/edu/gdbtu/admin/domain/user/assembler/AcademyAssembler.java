@@ -2,9 +2,9 @@ package cn.edu.gdbtu.admin.domain.user.assembler;
 
 import cn.edu.gdbtu.admin.common.entity.IgnoreToBaseEntity;
 import cn.edu.gdbtu.admin.common.entity.IgnoreToBaseEntityWithId;
-import cn.edu.gdbtu.admin.controller.cmd.CreateAcademyCMD;
-import cn.edu.gdbtu.admin.controller.cmd.UpdateAcademyCMD;
-import cn.edu.gdbtu.admin.controller.vo.AcademyVO;
+import cn.edu.gdbtu.admin.controller.user.cmd.CreateAcademyCMD;
+import cn.edu.gdbtu.admin.controller.user.cmd.UpdateAcademyCMD;
+import cn.edu.gdbtu.admin.controller.user.vo.AcademyVO;
 import cn.edu.gdbtu.admin.domain.user.entity.Academy;
 import org.mapstruct.Mapper;
 import org.mapstruct.ReportingPolicy;
