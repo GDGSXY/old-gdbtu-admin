@@ -13,6 +13,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.util.Assert;
 
 import java.util.List;
 
@@ -87,6 +88,11 @@ public class UserServiceImpl extends ServiceImpl<UserDao, User> implements UserS
                 .setRoleId(DEFAULT_TEACHER_ROLE);
         getBaseMapper().insert(user);
         return user;
+    }
+
+    @Override
+    public void updateUser(User user) {
+        Assert.isTrue(updateById(user), "更新失败");
     }
 
 }

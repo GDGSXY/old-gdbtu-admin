@@ -18,4 +18,6 @@ public interface UserAssembler {
 
     UserVO toVO(User user);
 
+    User cloneUser(User user);
+
 }

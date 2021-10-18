@@ -7,14 +7,14 @@ import cn.edu.gdbtu.admin.controller.user.vo.UserVO;
 import cn.edu.gdbtu.admin.domain.user.assembler.UserAssembler;
 import cn.edu.gdbtu.admin.domain.user.entity.User;
 import cn.edu.gdbtu.admin.domain.user.enums.PermissionEnum;
+import cn.edu.gdbtu.admin.service.application.UserAppService;
 import cn.edu.gdbtu.admin.service.user.UserService;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
@@ -29,6 +29,8 @@ import javax.validation.Valid;
 @RequiredPermission(PermissionEnum.TEACHER_MANAGEMENT)
 public class UserController {
 
+    private final UserAppService userAppService;
+
     private final UserService service;
 
     private final UserAssembler assembler;
@@ -38,6 +40,14 @@ public class UserController {
     public R<IPage<UserVO>> searchByCondition(@Valid SearchPagingQuery query) {
         IPage<User> page = service.searchByCondition(query);
         return R.success(page.convert(assembler::toVO));
+    }
+
+    @PostMapping("/role/{userId}")
+    @ApiOperation("修改用户的角色")
+    public R<Void> updateUserRole(@PathVariable("userId") long userId,
+                                  @ApiParam(value = "角色 id", required = true) @RequestParam long roleId) {
+        userAppService.updateUserRole(userId, roleId);
+        return R.success();
     }
 
 }

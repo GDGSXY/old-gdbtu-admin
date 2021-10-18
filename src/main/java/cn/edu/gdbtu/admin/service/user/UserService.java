@@ -42,4 +42,6 @@ public interface UserService extends IService<User> {
 
     User createTeacher(String name);
 
+    void updateUser(User user);
+
 }
